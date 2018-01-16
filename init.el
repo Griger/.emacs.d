@@ -41,7 +41,7 @@
 )
 
 (eval-after-load "latex"
-  '(define-key LaTeX-mode-map (kbd "<C-return>") #'insertarSaltoLinea))
+  '(define-key LaTeX-mode-map (kbd "<s-return>") #'insertarSaltoLinea))
 
 ;;Habilitar Reftex y CDLatex al iniar AucTex
 (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
