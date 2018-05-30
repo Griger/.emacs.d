@@ -13,6 +13,10 @@
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
 
+;;Turn on powerline
+(require 'powerline)
+(powerline-default-theme)
+
 
 ;;Cambiar entre buffers con el tabulador
 (global-set-key [C-tab] 'next-buffer)
@@ -46,6 +50,7 @@
 ;;Habilitar Reftex y CDLatex al iniar AucTex
 (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(add-hook 'LaTeX-mode-hook 'turn-on-flyspell) ;;activar FlySpell al abrir un archivo Tex
 (setq reftex-plug-into-auctex t)
 
 ;;Hacer que no se tabulen los docstrings en Python
@@ -66,3 +71,7 @@
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+
+;;Hacer que el diccionario por defecto de ispell sea el inglés
+(require 'ispell)
+(setq ispell-dictionary "en")
