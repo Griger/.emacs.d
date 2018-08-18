@@ -32,6 +32,9 @@
 ;;Abrir los archivos PHP siempre con el web-mode
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
+;;Abrir los archivo tkiz siempre con latex-mode
+(add-to-list 'auto-mode-alist '("\\.tikz\\'" . latex-mode))
+
 ;;Que AucTex nos pregunte cual el archivo maestro.
 (setq-default TeX-master nil)
 
