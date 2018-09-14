@@ -8,6 +8,8 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+;;(load-theme 'zenburn t)
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
