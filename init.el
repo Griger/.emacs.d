@@ -8,8 +8,6 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
-;;(load-theme 'zenburn t)
-
 (require 'package)
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
@@ -18,6 +16,16 @@
 ;;Turn on powerline
 (require 'powerline)
 (powerline-default-theme)
+
+;; (load-theme 'zenburn t)
+
+(load-theme 'nord t)
+
+;;Start rainbow-delimiters-mode in most programming modes:
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+;;Start rainbow-delimiters-mode in Latex-mode:
+(add-hook 'LaTeX-mode-hook #'rainbow-delimiters-mode)
 
 
 ;;Cambiar entre buffers con el tabulador

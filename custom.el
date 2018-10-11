@@ -20,7 +20,12 @@
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(cdlatex-math-symbol-prefix 231)
+ '(company-quickhelp-color-background "#4F4F4F")
+ '(company-quickhelp-color-foreground "#DCDCCC")
  '(custom-enabled-themes (quote (wombat)))
+ '(custom-safe-themes
+   (quote
+    ("0c32e4f0789f567a560be625f239ee9ec651e524e46a4708eb4aba3b9cdc89c5" "d1ede12c09296a84d007ef121cd72061c2c6722fcb02cb50a77d9eae4138a3ff" default)))
  '(fci-rule-color "#383838")
  '(inhibit-startup-screen t)
  '(latex-run-command "latex")
@@ -36,7 +41,7 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (zenburn-theme ess dot-mode powerline pandoc graphviz-dot-mode cdlatex helm-bibtex python-docstring sphinx-doc mmm-mode anything lacarte python-mode elpy polymode web-mode paradox auctex multiple-cursors pandoc-mode deferred auto-complete php-mode markdown-mode)))
+    (rainbow-delimiters nord-theme monokai-alt-theme zenburn-theme ess dot-mode powerline pandoc graphviz-dot-mode cdlatex helm-bibtex python-docstring sphinx-doc mmm-mode anything lacarte python-mode elpy polymode web-mode paradox auctex multiple-cursors pandoc-mode deferred auto-complete php-mode markdown-mode)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(send-mail-function (quote sendmail-send-it))
