@@ -45,6 +45,9 @@
 ;;Abrir los archivo tkiz siempre con latex-mode
 (add-to-list 'auto-mode-alist '("\\.tikz\\'" . latex-mode))
 
+;;Abrir los archivos .h con c++-mode.
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
 ;;Que AucTex nos pregunte cual el archivo maestro.
 (setq-default TeX-master nil)
 
@@ -64,6 +67,7 @@
 (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (add-hook 'LaTeX-mode-hook 'turn-on-flyspell) ;;activar FlySpell al abrir un archivo Tex
+;;(add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
 (setq reftex-plug-into-auctex t)
 
 ;;Hacer que no se tabulen los docstrings en Python
@@ -88,3 +92,18 @@
 ;;Hacer que el diccionario por defecto de ispell sea el inglés
 (require 'ispell)
 (setq ispell-dictionary "en")
+
+;;languagetool config
+(require 'langtool)
+(setf langtool-language-tool-jar "/usr/share/java/languagetool/languagetool-commandline.jar"
+langtool-java-bin "/usr/bin/java"
+langtool-java-classpath "/usr/share/languagetool:/usr/share/java/languagetool/*"
+langtool-mother-tongue "es")
+
+;;c++-mode config
+(require 'fic-mode)
+(add-hook 'prog-mode-hook 'fic-mode)
+(set-face-attribute 'fic-face nil :foreground "white" :background "#4C566A")
+
+(load "~/.emacs.d/pretty.el")
+(load "~/.emacs.d/fira.el")

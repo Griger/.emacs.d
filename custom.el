@@ -4,6 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(LaTeX-command "latex")
+ '(TeX-electric-sub-and-superscript nil)
+ '(TeX-insert-braces nil)
  '(TeX-view-program-list (quote (("Okular" ("okular %o") nil))))
  '(TeX-view-program-selection
    (quote
@@ -41,7 +43,7 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (rainbow-delimiters nord-theme monokai-alt-theme zenburn-theme ess dot-mode powerline pandoc graphviz-dot-mode cdlatex helm-bibtex python-docstring sphinx-doc mmm-mode anything lacarte python-mode elpy polymode web-mode paradox auctex multiple-cursors pandoc-mode deferred auto-complete php-mode markdown-mode)))
+    (pretty-symbols pretty-mode fic-mode org-pomodoro langtool rainbow-delimiters nord-theme monokai-alt-theme zenburn-theme dot-mode powerline pandoc graphviz-dot-mode cdlatex helm-bibtex python-docstring sphinx-doc mmm-mode anything lacarte python-mode elpy polymode web-mode paradox auctex multiple-cursors pandoc-mode deferred auto-complete php-mode markdown-mode)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(send-mail-function (quote sendmail-send-it))
