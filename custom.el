@@ -43,9 +43,10 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (pretty-symbols pretty-mode fic-mode org-pomodoro langtool rainbow-delimiters nord-theme monokai-alt-theme zenburn-theme dot-mode powerline pandoc graphviz-dot-mode cdlatex helm-bibtex python-docstring sphinx-doc mmm-mode anything lacarte python-mode elpy polymode web-mode paradox auctex multiple-cursors pandoc-mode deferred auto-complete php-mode markdown-mode)))
+    (magit doom-modeline doom-themes pretty-symbols pretty-mode fic-mode org-pomodoro langtool rainbow-delimiters nord-theme monokai-alt-theme zenburn-theme dot-mode powerline pandoc graphviz-dot-mode cdlatex helm-bibtex python-docstring sphinx-doc mmm-mode anything lacarte python-mode elpy polymode web-mode paradox auctex multiple-cursors pandoc-mode deferred auto-complete php-mode markdown-mode)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
+ '(safe-local-variable-values (quote ((TeX-master . \.\./\.\./thesis))))
  '(send-mail-function (quote sendmail-send-it))
  '(show-paren-mode t)
  '(tex-directory "./build")

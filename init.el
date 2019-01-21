@@ -12,14 +12,26 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
+;;(load "~/.emacs.d/pretty.el")
+;;(load "~/.emacs.d/fira.el")
 
 ;;Turn on powerline
-(require 'powerline)
-(powerline-default-theme)
+;;(require 'powerline)
+;;(powerline-default-theme)
+
+(require 'all-the-icons)
+(load "~/.emacs.d/doom.el")
+ 
+;;Turn on doom-modeline
+
+(require 'doom-modeline)
+(load "~/.emacs.d/doom-modeline.el")
+(doom-modeline-mode 1)
+
 
 ;; (load-theme 'zenburn t)
 
-(load-theme 'nord t)
+;;(load-theme 'nord t)
 
 ;;Start rainbow-delimiters-mode in most programming modes:
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
@@ -105,5 +117,3 @@ langtool-mother-tongue "es")
 (add-hook 'prog-mode-hook 'fic-mode)
 (set-face-attribute 'fic-face nil :foreground "white" :background "#4C566A")
 
-(load "~/.emacs.d/pretty.el")
-(load "~/.emacs.d/fira.el")
