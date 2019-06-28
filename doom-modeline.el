@@ -27,7 +27,7 @@
 (setq doom-modeline-python-executable "python")
 
 ;; Whether show `all-the-icons' or not (if nil nothing will be showed).
-(setq doom-modeline-icon t)
+(setq doom-modeline-icon nil)
 
 ;; Whether show the icon for major mode. It respects `doom-modeline-icon'.
 (setq doom-modeline-major-mode-icon t)

@@ -12,8 +12,14 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
-;;(load "~/.emacs.d/pretty.el")
-;;(load "~/.emacs.d/fira.el")
+(load "~/.emacs.d/fira.el")
+(load "~/.emacs.d/pretty.el") 
+
+(set-face-attribute 'default nil
+                    :family "Source Code Pro"
+                    :height 110
+                    :weight 'normal
+                    :width 'normal)
 
 ;;Turn on powerline
 ;;(require 'powerline)
@@ -28,17 +34,11 @@
 (load "~/.emacs.d/doom-modeline.el")
 (doom-modeline-mode 1)
 
-
-;; (load-theme 'zenburn t)
-
-;;(load-theme 'nord t)
-
 ;;Start rainbow-delimiters-mode in most programming modes:
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;;Start rainbow-delimiters-mode in Latex-mode:
 (add-hook 'LaTeX-mode-hook #'rainbow-delimiters-mode)
-
 
 ;;Cambiar entre buffers con el tabulador
 (global-set-key [C-tab] 'next-buffer)
@@ -52,7 +52,11 @@
 (menu-bar-mode -1)
 
 ;;Abrir los archivos PHP siempre con el web-mode
+(add-hook 'web-mode-hook 'emmet-mode)
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+
+(add-hook 'css-mode-hook 'emmet-mode)
 
 ;;Abrir los archivo tkiz siempre con latex-mode
 (add-to-list 'auto-mode-alist '("\\.tikz\\'" . latex-mode))
@@ -96,10 +100,19 @@
 ;;Activar los atajos para moverse entre ventanas.
 (windmove-default-keybindings)
 
+;;move-text
+(move-text-default-bindings)
+
 ;;Multi-cursor
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+
+;;company
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+(eval-after-load 'company
+  '(add-to-list 'company-backends '(company-css company-web-html)))
 
 ;;Hacer que el diccionario por defecto de ispell sea el inglés
 (require 'ispell)
@@ -117,3 +130,16 @@ langtool-mother-tongue "es")
 (add-hook 'prog-mode-hook 'fic-mode)
 (set-face-attribute 'fic-face nil :foreground "white" :background "#4C566A")
 
+;;configuration of lsp
+(require 'lsp-mode)
+(add-hook 'prog-mode-hook #'lsp-deferred)
+
+(require 'lsp-ui)
+(add-hook 'lsp-mode-hook 'lsp-ui-mode)
+(add-hook 'prog-mode-hook 'flycheck-mode)
+
+(require 'company-lsp)
+(push 'company-lsp company-backends)
+
+(require 'yasnippet)
+(yas-global-mode 1)
