@@ -140,9 +140,10 @@ langtool-mother-tongue "es")
 (require 'lsp-mode)
 (add-hook 'prog-mode-hook #'lsp-deferred)
 
-(require 'lsp-ui)
-(add-hook 'lsp-mode-hook 'lsp-ui-mode)
+;;(require 'lsp-ui)
+;;(add-hook 'lsp-mode-hook 'lsp-ui-mode)
 (add-hook 'prog-mode-hook 'flycheck-mode)
+(setq lsp-prefer-flymake :none) ;;disable flymake and lsp-ui
 
 (require 'company-lsp)
 (push 'company-lsp company-backends)
