@@ -21,6 +21,9 @@
                     :weight 'normal
                     :width 'normal)
 
+;;Set tab-size
+(setq-default tab-width 4)
+
 ;;Turn on powerline
 ;;(require 'powerline)
 ;;(powerline-default-theme)
@@ -93,9 +96,12 @@
       'noindent
     (python-indent-line)))
 
-(defun my-python-mode-hook ()
-  (setq indent-line-function #'my-python-indent-line))
-(add-hook 'python-mode-hook #'my-python-mode-hook)
+(add-hook 'python-mode-hook
+		  (lambda ()
+			(setq flycheck-pylintrc "~/.emacs.d/.pylintrc")
+			(setq indent-line-function #'my-python-indent-line)
+			)
+		  )
 
 ;;Activar los atajos para moverse entre ventanas.
 (windmove-default-keybindings)
