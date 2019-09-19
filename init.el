@@ -13,7 +13,11 @@
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
 (load "~/.emacs.d/fira.el")
-(load "~/.emacs.d/pretty.el") 
+(load "~/.emacs.d/pretty.el")
+
+(load-theme 'zenburn t)
+;;(load-theme 'material t)
+;;(load-theme 'base16-material t)
 
 (set-face-attribute 'default nil
                     :family "Source Code Pro"
@@ -23,19 +27,6 @@
 
 ;;Set tab-size
 (setq-default tab-width 4)
-
-;;Turn on powerline
-;;(require 'powerline)
-;;(powerline-default-theme)
-
-(require 'all-the-icons)
-(load "~/.emacs.d/doom.el")
- 
-;;Turn on doom-modeline
-
-(require 'doom-modeline)
-(load "~/.emacs.d/doom-modeline.el")
-(doom-modeline-mode 1)
 
 ;;Start rainbow-delimiters-mode in most programming modes:
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
